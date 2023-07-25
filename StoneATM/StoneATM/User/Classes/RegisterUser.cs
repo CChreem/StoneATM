@@ -12,9 +12,6 @@ namespace StoneATM.User.Classes
 
         public void Register()
         {
-            //Perguntar nome cliente. 
-            //Perguntar CPF cliente.
-            //Solicitar que ele crie senha. 
             Console.WriteLine("-----------FLUXO CADASTRO-------------");
             Console.WriteLine("NOME: ");
             var name = Console.ReadLine();
