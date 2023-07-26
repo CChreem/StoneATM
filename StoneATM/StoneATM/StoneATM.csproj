@@ -45,8 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\Classes\Client.cs" />
-    <Compile Include="User\Classes\RegisterUser.cs" />
+    <Compile Include="User\Classes\Account.cs" />
+    <Compile Include="User\Classes\CheckingAccount.cs" />
+    <Compile Include="User\Classes\IAccount.cs" />
+    <Compile Include="User\Classes\Layout.cs" />
+    <Compile Include="User\Classes\User.cs" />
     <Compile Include="User\Interfaces\IRegisterUser.cs" />
   </ItemGroup>
   <ItemGroup>

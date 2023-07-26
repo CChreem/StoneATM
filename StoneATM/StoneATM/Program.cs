@@ -12,9 +12,7 @@ namespace StoneATM
     {
         static void Main(string[] args)
         {
-            var register = new RegisterUser();
-
-            register.Register();
+            Layout.MainScreen();
         }
     }
 }
