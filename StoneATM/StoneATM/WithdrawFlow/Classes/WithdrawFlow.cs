@@ -1,9 +1,10 @@
 ﻿using StoneATM.RegisterFlow.Classes;
 using StoneATM.User.Classes;
+using StoneATM.WithdrawFlow.Interfaces;
 
 namespace StoneATM.WithdrawFlow.Classes
 {
-    public class WithdrawFlow
+    public class WithdrawFlow : IWithdrawFlow
     {
         Account account = new Account();
         UserAccount userAccount = new UserAccount();

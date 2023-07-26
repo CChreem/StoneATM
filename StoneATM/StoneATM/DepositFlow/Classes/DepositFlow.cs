@@ -1,13 +1,9 @@
-﻿using StoneATM.User.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StoneATM.DepositFlow.Interfaces;
+using StoneATM.User.Classes;
 
 namespace StoneATM.DepositFlow.Classes
 {
-    public class DepositFlow
+    public class DepositFlow : IDepositFlow
     {
         Account account = new Account();
         

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DepositFlow\Classes\DepositFlow.cs" />
+    <Compile Include="DepositFlow\Interfaces\IDepositFlow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterFlow\Accounts\Classes\Account.cs" />
@@ -54,13 +55,11 @@
     <Compile Include="RegisterFlow\Users\Classes\User.cs" />
     <Compile Include="RegisterFlow\Users\Interfaces\IRegisterUser.cs" />
     <Compile Include="WithdrawFlow\Classes\WithdrawFlow.cs" />
+    <Compile Include="WithdrawFlow\Interfaces\IWithdrawFlow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DepositFlow\Interfaces\" />
-    <Folder Include="WithdrawFlow\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
