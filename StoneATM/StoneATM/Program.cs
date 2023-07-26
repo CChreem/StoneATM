@@ -6,7 +6,8 @@ namespace StoneATM
     {
         static void Main(string[] args)
         {
-            RegisterScreen.MainScreen();
+            RegisterScreen registerScreen = new RegisterScreen();
+            registerScreen.MainScreen();
         }
     }
 }

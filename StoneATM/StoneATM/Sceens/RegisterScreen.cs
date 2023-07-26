@@ -1,4 +1,5 @@
 using StoneATM.RegisterFlow.Classes;
+using StoneATM.Sceens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace StoneATM.Users.Classes
     public class RegisterScreen
     {
         private static List<Client> users = new List<Client>();
+        MenuScreen menuScreen = new MenuScreen();
+        private int option = 0;
 
-        private static int option = 0;
-        public static void MainScreen()
+        public void MainScreen()
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
@@ -44,7 +46,7 @@ namespace StoneATM.Users.Classes
             }
         }
 
-        private static void RegisterUserScreen()
+        public void RegisterUserScreen()
         {
             var registerClient = new RegisterUserFlow();
             var client = new Client();
@@ -69,10 +71,10 @@ namespace StoneATM.Users.Classes
 
             Thread.Sleep(1000);
 
-            LoginAccountScreen(client);
+            menuScreen.LoginAccountScreen(client);
         }
 
-        private static void LoginScreen()
+        public void LoginScreen()
         {
             Console.Clear();
 
@@ -111,70 +113,17 @@ namespace StoneATM.Users.Classes
             if (client != null)
             {
                 WelcomeScreen(client);
-                LoginAccountScreen(client);
+                menuScreen.LoginAccountScreen(client);
             }
 
         }
 
-        private static void WelcomeScreen(Client user)
+        public void WelcomeScreen(Client user)
         {
             var userAccount = new UserAccount();
 
             Console.WriteLine($"Seja Bem vindo, {user.Name} | Conta: {userAccount.GetAccountNumber()}");
         }
 
-        public static void LoginAccountScreen(Client user)
-        {
-            Console.Clear();
-
-            WelcomeScreen(user);
-
-            Console.WriteLine("                                ");
-            Console.WriteLine("         STONE - ATM            ");
-            Console.WriteLine("                                ");
-            Console.WriteLine(" Digite a opção desejada:       ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 1 - Depósito                   ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 2 - Saque                      ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 3 - Cambio                     ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 4 - Saldo                      ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 5 - Extrato                    ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 6 - Volta para Tela principal  ");
-            Console.WriteLine("=============================== ");
-
-
-            option = int.Parse(Console.ReadLine());
-
-            switch (option)
-            {
-                case 1:
-                    //Deposito
-                    break;
-                case 2:
-                    //Saque
-                    break;
-                case 3:
-                    //Cambio
-                    break;
-                case 4:
-                    //saldo
-                    break;
-                case 5:
-                    //extrato
-                    break;
-                case 6:
-                    MainScreen();
-                    break;
-                default:
-                    Console.Clear();
-                    Console.WriteLine("Opção inválida");
-                    break;
-            }
-        }
     }
 }

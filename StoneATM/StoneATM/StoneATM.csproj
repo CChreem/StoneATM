@@ -50,6 +50,7 @@
     <Compile Include="RegisterFlow\Accounts\Classes\Account.cs" />
     <Compile Include="RegisterFlow\Accounts\Classes\UserAccount.cs" />
     <Compile Include="RegisterFlow\Accounts\Interface\IUserAccount.cs" />
+    <Compile Include="Sceens\MenuScreen.cs" />
     <Compile Include="Sceens\RegisterScreen.cs" />
     <Compile Include="RegisterFlow\Users\Classes\RegisterUserFlow.cs" />
     <Compile Include="RegisterFlow\Users\Classes\Client.cs" />
