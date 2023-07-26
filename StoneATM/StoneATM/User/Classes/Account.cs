@@ -24,7 +24,7 @@ namespace StoneATM.User.Classes
 
         public void deposit(double amount)
         {
-            Amount += amount;
+          Amount += amount;
         }
 
         public bool Withdraw(double amount)

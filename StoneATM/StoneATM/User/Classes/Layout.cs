@@ -71,6 +71,15 @@ namespace StoneATM.User.Classes
             
             client.Account = checkingAccount;
 
+            Console.WriteLine("         STONE - ATM                 ");
+            Console.WriteLine("                                     ");
+            Console.WriteLine("=====================================");
+            Console.WriteLine(" Digite o valor do depósito inicial: ");
+            Console.WriteLine("==================================== ");
+            Console.WriteLine("                                     ");
+            double amount = double.Parse(Console.ReadLine());
+            Console.WriteLine("                                     ");
+            client.Account.deposit(amount);
             users.Add(client);
 
             Console.Clear();
