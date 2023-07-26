@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace StoneATM.User.Classes
 {
-    public class CheckingAccount : Account
+    public interface IUserAccount
     {
-        public CheckingAccount()
-        {
-            AccountNumber = "00" + Account.SequecialAccountNumber;
-        }
+        string CreateAccount();
+        double CheckBalance();
+        string GetAccountNumber();
     }
 }

@@ -43,17 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepositFlow\Classes\DepositFlow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\Classes\Account.cs" />
-    <Compile Include="User\Classes\CheckingAccount.cs" />
-    <Compile Include="User\Classes\IAccount.cs" />
-    <Compile Include="User\Classes\Layout.cs" />
-    <Compile Include="User\Classes\User.cs" />
-    <Compile Include="User\Interfaces\IRegisterUser.cs" />
+    <Compile Include="RegisterFlow\Accounts\Classes\Account.cs" />
+    <Compile Include="RegisterFlow\Accounts\Classes\UserAccount.cs" />
+    <Compile Include="RegisterFlow\Accounts\Interface\IUserAccount.cs" />
+    <Compile Include="Layout.cs" />
+    <Compile Include="RegisterFlow\Users\Classes\RegisterUserFlow.cs" />
+    <Compile Include="RegisterFlow\Users\Classes\User.cs" />
+    <Compile Include="RegisterFlow\Users\Interfaces\IRegisterUser.cs" />
+    <Compile Include="WithdrawFlow\Classes\WithdrawFlow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DepositFlow\Interfaces\" />
+    <Folder Include="WithdrawFlow\Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

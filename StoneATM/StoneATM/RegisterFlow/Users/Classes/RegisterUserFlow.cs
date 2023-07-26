@@ -1,35 +1,32 @@
-﻿using System;
+﻿using StoneATM.Users.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace StoneATM.User.Classes
+namespace StoneATM.Users.Classes
 {
-    public class User
+    public class RegisterUserFlow : IRegisterUser
     {
-        private readonly List<string> forbidden = new List<string>() { "9999", "0000", "1111" };
-        public string Name { get; set; } = string.Empty;
-        public string CPF { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public IAccount Account { get; set; }
+        User client = new User();
 
-        public User()
+        public string SetName(string name)
         {
-
+            client.Name = name;
+            return name;
         }
 
-        public void SetName(string name)
+        public string SetCPF(string cpf)
         {
-            Name = name;
+            client.CPF = cpf;
+            return cpf;
         }
 
-        public void SetCPF(string cpf)
-        {
-            CPF = cpf;
-        }
-
-        public void SetPassword()
+        public string SetPassword()
         {
             var sucess = false;
+            var forbidden = new List<string>() { "9999", "0000", "1111" };
+            var password = "";
+
 
             while (sucess == false)
             {
@@ -39,7 +36,7 @@ namespace StoneATM.User.Classes
                 Console.WriteLine(" Digite a senha com 4 dígitos:  ");
                 Console.WriteLine("=============================== ");
                 Console.WriteLine("                                ");
-                string password = Console.ReadLine();
+                password = Console.ReadLine();
 
                 if (forbidden.Contains(password))
                 {
@@ -55,8 +52,11 @@ namespace StoneATM.User.Classes
                 else
                 {
                     sucess = true;
+                    client.Password = password;
                 }
             }
+            return password;
         }
     }
 }
+    

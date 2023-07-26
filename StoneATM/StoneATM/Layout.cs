@@ -1,14 +1,16 @@
+using StoneATM.RegisterFlow.Classes;
+using StoneATM.Users.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace StoneATM.User.Classes
+namespace StoneATM.Users.Classes
 {
     public class Layout
     {
         private static List<User> users = new List<User>();
-                   
+
         private static int option = 0;
         public static void MainScreen()
         {
@@ -45,7 +47,8 @@ namespace StoneATM.User.Classes
 
         private static void RegisterUserScreen()
         {
-            User client = new User();
+            var registerClient = new RegisterUserFlow();
+            var client = new User();
 
             Console.Clear();
 
@@ -63,23 +66,15 @@ namespace StoneATM.User.Classes
             string cpf = Console.ReadLine();
             Console.WriteLine("                                ");
 
-            client.SetPassword();
-            client.SetName(name);
-            client.SetCPF(cpf);
+            client.Password = registerClient.SetPassword();
+            client.Name = registerClient.SetName(name);
+            client.CPF = registerClient.SetCPF(cpf);
 
-            CheckingAccount checkingAccount = new CheckingAccount();
-            
-            client.Account = checkingAccount;
 
-            Console.WriteLine("         STONE - ATM                 ");
-            Console.WriteLine("                                     ");
-            Console.WriteLine("=====================================");
-            Console.WriteLine(" Digite o valor do depósito inicial: ");
-            Console.WriteLine("==================================== ");
-            Console.WriteLine("                                     ");
-            double amount = double.Parse(Console.ReadLine());
-            Console.WriteLine("                                     ");
-            client.Account.deposit(amount);
+            var userAccount = new UserAccount();
+
+            client.Account = userAccount.CreateAccount();
+
             users.Add(client);
 
             Console.Clear();
@@ -112,8 +107,8 @@ namespace StoneATM.User.Classes
             string password = Console.ReadLine();
             Console.WriteLine("                                ");
 
-            User client = users.FirstOrDefault(x => x.CPF == cpf && x.Password == password );
-            
+            User client = users.FirstOrDefault(x => x.CPF == cpf && x.Password == password);
+
             if (client == null)
             {
                 Console.Clear();
@@ -129,18 +124,20 @@ namespace StoneATM.User.Classes
                 MainScreen();
 
             }
-            
+
             if (client != null)
             {
                 WelcomeScreen(client);
                 LoginAccountScreen(client);
             }
-            
+
         }
 
         private static void WelcomeScreen(User user)
         {
-            Console.WriteLine($"Seja Bem vindo, {user.Name} | Conta: {user.Account.GetAccountNumber()}");
+            var userAccount = new UserAccount();
+
+            Console.WriteLine($"Seja Bem vindo, {user.Name} | Conta: {userAccount.GetAccountNumber()}");
         }
 
         private static void LoginAccountScreen(User user)
@@ -167,10 +164,10 @@ namespace StoneATM.User.Classes
             Console.WriteLine(" 6 - Volta para Tela principal  ");
             Console.WriteLine("=============================== ");
 
- 
+
             option = int.Parse(Console.ReadLine());
 
-             switch (option)
+            switch (option)
             {
                 case 1:
                     //Deposito
@@ -195,10 +192,6 @@ namespace StoneATM.User.Classes
                     Console.WriteLine("Opção inválida");
                     break;
             }
-        }
-         private static bool IsAdmin(User client)
-        {
-           return client.Name == "Administrador" && client.CPF == "1111" && client.Password == "2222";
         }
     }
 
