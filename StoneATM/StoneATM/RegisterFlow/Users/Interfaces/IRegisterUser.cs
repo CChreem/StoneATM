@@ -2,8 +2,8 @@
 {
     public interface IRegisterUser
     {
-        string SetName(string name);
-        string SetCPF(string cpf);
+        string SetName();
+        string SetCPF();
         string SetPassword();
     }
 }

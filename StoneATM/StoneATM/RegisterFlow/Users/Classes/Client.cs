@@ -1,6 +1,6 @@
 ﻿namespace StoneATM.Users.Classes
 {
-    public class User
+    public class Client
     {
         public string Name { get; set; } = string.Empty;
         public string CPF { get; set; } = string.Empty;

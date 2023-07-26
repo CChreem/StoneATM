@@ -7,16 +7,32 @@ namespace StoneATM.Users.Classes
 {
     public class RegisterUserFlow : IRegisterUser
     {
-        User client = new User();
+        Client client = new Client();
 
-        public string SetName(string name)
+        public string SetName()
         {
+
+            Console.Clear();
+
+            Console.WriteLine("                                ");
+            Console.WriteLine("          STONE - ATM           ");
+            Console.WriteLine("                                ");
+            Console.WriteLine(" Nome:                          ");
+            Console.WriteLine("=============================== ");
+            Console.WriteLine("                                ");
+            string name = Console.ReadLine(); 
             client.Name = name;
             return name;
         }
 
-        public string SetCPF(string cpf)
+        public string SetCPF()
         {
+            Console.WriteLine("                                ");
+            Console.WriteLine(" Digite o CPF:                  ");
+            Console.WriteLine("=============================== ");
+            Console.WriteLine("                                ");
+            string cpf = Console.ReadLine();
+            Console.WriteLine("                                ");
             client.CPF = cpf;
             return cpf;
         }

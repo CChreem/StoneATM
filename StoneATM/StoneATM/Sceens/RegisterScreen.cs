@@ -6,9 +6,9 @@ using System.Threading;
 
 namespace StoneATM.Users.Classes
 {
-    public class Layout
+    public class RegisterScreen
     {
-        private static List<User> users = new List<User>();
+        private static List<Client> users = new List<Client>();
 
         private static int option = 0;
         public static void MainScreen()
@@ -47,28 +47,12 @@ namespace StoneATM.Users.Classes
         private static void RegisterUserScreen()
         {
             var registerClient = new RegisterUserFlow();
-            var client = new User();
+            var client = new Client();
 
             Console.Clear();
-
-            Console.WriteLine("                                ");
-            Console.WriteLine("          STONE - ATM           ");
-            Console.WriteLine("                                ");
-            Console.WriteLine(" Nome:                          ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine("                                ");
-            string name = Console.ReadLine();
-            Console.WriteLine("                                ");
-            Console.WriteLine(" Digite o CPF:                  ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine("                                ");
-            string cpf = Console.ReadLine();
-            Console.WriteLine("                                ");
-
+            client.Name = registerClient.SetName();
+            client.CPF = registerClient.SetCPF();
             client.Password = registerClient.SetPassword();
-            client.Name = registerClient.SetName(name);
-            client.CPF = registerClient.SetCPF(cpf);
-
 
             var userAccount = new UserAccount();
 
@@ -106,7 +90,7 @@ namespace StoneATM.Users.Classes
             string password = Console.ReadLine();
             Console.WriteLine("                                ");
 
-            User client = users.FirstOrDefault(x => x.CPF == cpf && x.Password == password);
+            Client client = users.FirstOrDefault(x => x.CPF == cpf && x.Password == password);
 
             if (client == null)
             {
@@ -132,14 +116,14 @@ namespace StoneATM.Users.Classes
 
         }
 
-        private static void WelcomeScreen(User user)
+        private static void WelcomeScreen(Client user)
         {
             var userAccount = new UserAccount();
 
             Console.WriteLine($"Seja Bem vindo, {user.Name} | Conta: {userAccount.GetAccountNumber()}");
         }
 
-        private static void LoginAccountScreen(User user)
+        public static void LoginAccountScreen(Client user)
         {
             Console.Clear();
 
@@ -193,5 +177,4 @@ namespace StoneATM.Users.Classes
             }
         }
     }
-
 }
