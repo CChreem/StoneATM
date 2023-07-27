@@ -1,4 +1,6 @@
-﻿namespace StoneATM.Users.Classes
+﻿using StoneATM.User.Classes;
+
+namespace StoneATM.Users.Classes
 {
     public class Client
     {

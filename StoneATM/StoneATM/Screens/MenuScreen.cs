@@ -1,9 +1,8 @@
-﻿using StoneATM.Users.Classes;
+﻿using StoneATM.DepositFlows.Classes;
+using StoneATM.DepositFlows.Interfaces;
+using StoneATM.Screens;
+using StoneATM.Users.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoneATM.Sceens
 {
@@ -14,6 +13,7 @@ namespace StoneATM.Sceens
         public void LoginAccountScreen(Client user)
         {
             var registerScreen = new RegisterScreen();
+            var depositScreen = new DepositScreen();
 
             Console.Clear();
 
@@ -43,7 +43,7 @@ namespace StoneATM.Sceens
             switch (option)
             {
                 case 1:
-                    //Deposito
+                    depositScreen.Deposit();
                     break;
                 case 2:
                     //Saque

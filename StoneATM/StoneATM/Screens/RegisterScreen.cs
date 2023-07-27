@@ -1,5 +1,6 @@
 using StoneATM.RegisterFlow.Classes;
 using StoneATM.Sceens;
+using StoneATM.User.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,7 +57,7 @@ namespace StoneATM.Users.Classes
             client.CPF = registerClient.SetCPF();
             client.Password = registerClient.SetPassword();
 
-            var userAccount = new UserAccount();
+            UserAccount userAccount = new UserAccount();
 
             client.Account = userAccount.CreateAccount();
 

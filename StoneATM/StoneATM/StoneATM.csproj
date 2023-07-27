@@ -43,13 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Flows\DepositFlow\Classes\DepositFlow.cs" />
-    <Compile Include="Flows\DepositFlow\Interfaces\IDepositFlow.cs" />
+    <Compile Include="Flows\DepositFlows\Classes\DepositFlow.cs" />
+    <Compile Include="Flows\DepositFlows\Interfaces\IDepositFlow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Flows\RegisterFlow\Accounts\Classes\Account.cs" />
     <Compile Include="Flows\RegisterFlow\Accounts\Classes\UserAccount.cs" />
     <Compile Include="Flows\RegisterFlow\Accounts\Interface\IUserAccount.cs" />
+    <Compile Include="Screens\DepositScreen.cs" />
     <Compile Include="Screens\MenuScreen.cs" />
     <Compile Include="Screens\RegisterScreen.cs" />
     <Compile Include="Flows\RegisterFlow\Users\Classes\RegisterUserFlow.cs" />
