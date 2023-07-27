@@ -1,13 +1,8 @@
-﻿using StoneATM.DepositFlows.Classes;
-using StoneATM.Sceens;
+﻿using StoneATM.Sceens;
 using StoneATM.Users.Classes;
 using StoneATM.WithdrawFlow.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace StoneATM.Screens
 {

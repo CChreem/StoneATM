@@ -1,6 +1,5 @@
 ﻿using StoneATM.Screens;
 using StoneATM.Users.Classes;
-using StoneATM.WithdrawFlow.Classes;
 using System;
 
 namespace StoneATM.Sceens

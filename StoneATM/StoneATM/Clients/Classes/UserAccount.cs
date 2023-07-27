@@ -1,6 +1,4 @@
 ﻿using StoneATM.User.Classes;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace StoneATM.RegisterFlow.Classes
 {

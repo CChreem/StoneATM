@@ -1,8 +1,5 @@
-﻿using StoneATM.RegisterFlow.Classes;
-using StoneATM.User.Classes;
-using StoneATM.WithdrawFlow.Interfaces;
+﻿using StoneATM.WithdrawFlow.Interfaces;
 using System;
-using System.Threading.Tasks;
 
 namespace StoneATM.WithdrawFlow.Classes
 {

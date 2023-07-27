@@ -1,6 +1,5 @@
 using StoneATM.RegisterFlow.Classes;
 using StoneATM.Sceens;
-using StoneATM.User.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
