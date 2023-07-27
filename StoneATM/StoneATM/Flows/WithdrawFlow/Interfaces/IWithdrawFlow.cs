@@ -2,6 +2,7 @@
 {
     public interface IWithdrawFlow
     {
-        bool Withdraw(double amount);
+        void WithdrawReal();
+        void WithdrawDolar();
     }
 }

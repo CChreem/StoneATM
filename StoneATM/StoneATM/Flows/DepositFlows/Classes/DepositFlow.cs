@@ -9,7 +9,6 @@ namespace StoneATM.DepositFlows.Classes
 {
     public class DepositFlow : IDepositFlow
     {
-        Account account = new Account();
         public void DepositReal()
         {
             Console.WriteLine("\n Valor:                         ");
@@ -27,7 +26,7 @@ namespace StoneATM.DepositFlows.Classes
             Console.WriteLine("                                ");
             int amount = int.Parse(Console.ReadLine());
             var valorDolar = (amount * 4.8);
-            Console.WriteLine($"\nU${valorDolar} foi depositado.");
+            Console.WriteLine($"\nR${valorDolar} foi depositado.");
         }
     }
 }

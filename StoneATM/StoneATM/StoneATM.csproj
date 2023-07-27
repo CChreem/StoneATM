@@ -56,8 +56,9 @@
     <Compile Include="Flows\RegisterFlow\Users\Classes\RegisterUserFlow.cs" />
     <Compile Include="Flows\RegisterFlow\Users\Classes\Client.cs" />
     <Compile Include="Flows\RegisterFlow\Users\Interfaces\IRegisterUser.cs" />
-    <Compile Include="Flows\WithdrawFlow\Classes\WithdrawFlow.cs" />
+    <Compile Include="Flows\WithdrawFlow\Classes\WithdrawFlows.cs" />
     <Compile Include="Flows\WithdrawFlow\Interfaces\IWithdrawFlow.cs" />
+    <Compile Include="Screens\WithdrawScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
