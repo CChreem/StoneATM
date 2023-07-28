@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace StoneATM.Screens
 {
-    public class DepositScreen
+    public sealed class DepositScreen
     {
         public void Deposit() 
         {
