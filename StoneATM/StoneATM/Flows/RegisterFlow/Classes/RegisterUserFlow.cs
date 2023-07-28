@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using StoneATM.Utils;
 
 namespace StoneATM.Users.Classes
 {
@@ -52,7 +53,7 @@ namespace StoneATM.Users.Classes
                 Console.WriteLine(" Digite a senha com 4 dígitos:  ");
                 Console.WriteLine("=============================== ");
                 Console.WriteLine("                                ");
-                password = Console.ReadLine();
+                password = PasswordUtils.ReadPassword();
 
                 if (forbidden.Contains(password))
                 {

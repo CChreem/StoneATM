@@ -5,10 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using StoneATM.Utils;
 
 namespace StoneATM.Users.Classes
 {
-    public class RegisterScreen
+    public sealed class RegisterScreen
     {
         private int option = 0;
         MenuScreen menuScreen = new MenuScreen();
@@ -32,7 +33,16 @@ namespace StoneATM.Users.Classes
             Console.WriteLine("=============================== ");
             Console.WriteLine("                                ");
 
-            option = int.Parse(Console.ReadLine());
+            int parsedOption;
+            if (int.TryParse(Console.ReadLine(), out parsedOption))
+            {
+                option = parsedOption;
+            }
+            else
+            {
+                Console.WriteLine("Opção inválida. Entre com uma opção válida (1 or 2).");
+                MainScreen();
+            }
 
             switch (option)
             {
@@ -91,7 +101,7 @@ namespace StoneATM.Users.Classes
             Console.WriteLine(" Digite a senha:                ");
             Console.WriteLine("=============================== ");
             Console.WriteLine("                                ");
-            string password = Console.ReadLine();
+            string password = PasswordUtils.ReadPassword();
             Console.WriteLine("                                ");
 
             Client client = users.FirstOrDefault(x => x.CPF == cpf && x.Password == password);

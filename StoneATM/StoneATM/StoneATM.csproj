@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utils\PasswordUtils.cs" />
     <Compile Include="Flows\DepositFlows\Classes\DepositFlow.cs" />
     <Compile Include="Flows\DepositFlows\Interfaces\IDepositFlow.cs" />
     <Compile Include="Program.cs" />
@@ -63,6 +64,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

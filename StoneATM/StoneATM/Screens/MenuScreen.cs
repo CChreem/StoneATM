@@ -4,7 +4,7 @@ using System;
 
 namespace StoneATM.Sceens
 {
-    public class MenuScreen
+    public sealed class MenuScreen
     {
         private static int option = 0;
 
@@ -36,34 +36,43 @@ namespace StoneATM.Sceens
             Console.WriteLine("=============================== ");
             Console.WriteLine(" 6 - Volta para Tela principal  ");
             Console.WriteLine("=============================== ");
+            
+            int option;
+            bool isValidOption = int.TryParse(Console.ReadLine(), out option);
 
-
-            option = int.Parse(Console.ReadLine());
-
-            switch (option)
+            if (isValidOption)
             {
-                case 1:
-                    depositScreen.Deposit();
-                    break;
-                case 2:
-                    withdrawScreen.Withdraw();
-                    break;
-                case 3:
-                    //Cambio
-                    break;
-                case 4:
-                    //saldo
-                    break;
-                case 5:
-                    //extrato
-                    break;
-                case 6:
-                    registerScreen.MainScreen();
-                    break;
-                default:
-                    Console.Clear();
-                    Console.WriteLine("Opção inválida");
-                    break;
+                switch (option)
+                {
+                    case 1:
+                        depositScreen.Deposit();
+                        break;
+                    case 2:
+                        withdrawScreen.Withdraw();
+                        break;
+                    case 3:
+                        //Cambio
+                        break;
+                    case 4:
+                        //saldo
+                        break;
+                    case 5:
+                        //extrato
+                        break;
+                    case 6:
+                        registerScreen.MainScreen();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Opção inválida");
+                        break;
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Opção inválida. Por favor, digite um número válido.");
+                registerScreen.MainScreen();
             }
         }
     }

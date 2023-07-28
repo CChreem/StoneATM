@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace StoneATM.Screens
 {
-    public class WithdrawScreen
+    public sealed class WithdrawScreen
     {
         private readonly IWithdrawFlow _withdrawFlow = new WithdrawFlows();
         public void Withdraw()

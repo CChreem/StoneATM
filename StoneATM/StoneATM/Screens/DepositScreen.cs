@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace StoneATM.Screens
 {
-    public class DepositScreen
+    public sealed class DepositScreen
     {
         private readonly IDepositFlow _depositFlow = new DepositFlow();
 
