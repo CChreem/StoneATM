@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Screens\BalanceScreen.cs" />
     <Compile Include="Utils\PasswordUtils.cs" />
     <Compile Include="Flows\DepositFlows\Classes\DepositFlow.cs" />
     <Compile Include="Flows\DepositFlows\Interfaces\IDepositFlow.cs" />

@@ -8,10 +8,9 @@ namespace StoneATM.Screens
 {
     public sealed class DepositScreen
     {
-        public void Deposit() 
+        public void Deposit(Client user) 
         {
             var menuScreen = new MenuScreen();
-            var client = new Client();
             var deposit = new DepositFlow();
 
             Console.WriteLine("                                ");
@@ -21,17 +20,17 @@ namespace StoneATM.Screens
             var moeda = Console.ReadLine();
             if (moeda == "1") 
             {
-                deposit.DepositReal();
+                deposit.DepositReal(user);
 
             }
             else if (moeda == "2")
             {
-                deposit.DepositDolar();
+                deposit.DepositDolar(user);
             }
 
             Thread.Sleep(2000);
 
-            menuScreen.LoginAccountScreen(client);
+            menuScreen.LoginAccountScreen(user);
 
         }
     }
