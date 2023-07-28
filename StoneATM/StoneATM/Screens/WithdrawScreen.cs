@@ -10,10 +10,9 @@ namespace StoneATM.Screens
     public sealed class WithdrawScreen
     {
         private readonly IWithdrawFlow _withdrawFlow = new WithdrawFlows();
-        public void Withdraw()
+        public void Withdraw(Client user)
         {
             var menuScreen = new MenuScreen();
-            var client = new Client();
 
             Console.WriteLine("                                ");
             Console.WriteLine("          STONE - ATM           ");
@@ -22,17 +21,17 @@ namespace StoneATM.Screens
             var moeda = Console.ReadLine();
             if (moeda == "1")
             {
-                _withdrawFlow.WithdrawReal();
+                _withdrawFlow.WithdrawReal(user);
 
             }
             else if (moeda == "2")
             {
-                _withdrawFlow.WithdrawDolar();
+                _withdrawFlow.WithdrawDolar(user);
             }
 
-            Thread.Sleep(2000);
+            Thread.Sleep(500);
 
-            menuScreen.LoginAccountScreen(client);
+            menuScreen.LoginAccountScreen(user);
 
         }
     }

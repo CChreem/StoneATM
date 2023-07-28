@@ -1,9 +1,7 @@
-﻿using StoneATM.DepositFlows.Interfaces;
-using StoneATM.Sceens;
-using StoneATM.User.Classes;
-using StoneATM.Users.Classes;
-using System;
+﻿using System;
 using System.Threading;
+using StoneATM.DepositFlows.Interfaces;
+using StoneATM.Users.Classes;
 
 namespace StoneATM.DepositFlows.Classes
 {
