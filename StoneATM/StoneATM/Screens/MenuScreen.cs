@@ -26,13 +26,9 @@ namespace StoneATM.Sceens
             Console.WriteLine("=============================== ");
             Console.WriteLine(" 2 - Saque                      ");
             Console.WriteLine("=============================== ");
-            Console.WriteLine(" 3 - Cambio                     ");
+            Console.WriteLine(" 3 - Saldo                      ");
             Console.WriteLine("=============================== ");
-            Console.WriteLine(" 4 - Saldo                      ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 5 - Extrato                    ");
-            Console.WriteLine("=============================== ");
-            Console.WriteLine(" 6 - Volta para Tela principal  ");
+            Console.WriteLine(" 4 - Volta para Tela principal  ");
             Console.WriteLine("=============================== ");
             
             int option;
@@ -49,15 +45,9 @@ namespace StoneATM.Sceens
                         withdrawScreen.Withdraw(user);
                         break;
                     case 3:
-                        //Cambio
-                        break;
-                    case 4:
                         balanceScreen.CheckBalance(user);
                         break;
-                    case 5:
-                        //extrato
-                        break;
-                    case 6:
+                    case 4:
                         registerScreen.MainScreen();
                         break;
                     default:
