@@ -1,6 +1,7 @@
 ﻿using StoneATM.Sceens;
 using StoneATM.Users.Classes;
 using StoneATM.WithdrawFlow.Classes;
+using StoneATM.WithdrawFlow.Interfaces;
 using System;
 using System.Threading;
 
@@ -8,11 +9,11 @@ namespace StoneATM.Screens
 {
     public class WithdrawScreen
     {
+        private readonly IWithdrawFlow _withdrawFlow = new WithdrawFlows();
         public void Withdraw()
         {
             var menuScreen = new MenuScreen();
             var client = new Client();
-            var withdraw = new WithdrawFlows();
 
             Console.WriteLine("                                ");
             Console.WriteLine("          STONE - ATM           ");
@@ -21,12 +22,12 @@ namespace StoneATM.Screens
             var moeda = Console.ReadLine();
             if (moeda == "1")
             {
-                withdraw.WithdrawReal();
+                _withdrawFlow.WithdrawReal();
 
             }
             else if (moeda == "2")
             {
-                withdraw.WithdrawDolar();
+                _withdrawFlow.WithdrawDolar();
             }
 
             Thread.Sleep(2000);
