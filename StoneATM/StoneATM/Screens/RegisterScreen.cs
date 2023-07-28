@@ -10,9 +10,9 @@ namespace StoneATM.Users.Classes
 {
     public class RegisterScreen
     {
-        private static List<Client> users = new List<Client>();
-        MenuScreen menuScreen = new MenuScreen();
         private int option = 0;
+        MenuScreen menuScreen = new MenuScreen();
+        private static List<Client> users = new List<Client>();
         private readonly IUserAccount _userAccount = new UserAccount();
 
         public void MainScreen()
@@ -117,13 +117,11 @@ namespace StoneATM.Users.Classes
                 WelcomeScreen(client);
                 menuScreen.LoginAccountScreen(client);
             }
-
         }
 
         public void WelcomeScreen(Client user)
         {
             Console.WriteLine($"Seja Bem vindo, {user.Name} | Conta: {_userAccount.GetAccountNumber()}");
         }
-
     }
 }
