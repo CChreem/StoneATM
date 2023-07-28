@@ -34,7 +34,7 @@ namespace StoneATM.WithdrawFlow.Classes
                     user.Balance -= amount;
                     Thread.Sleep(1500);
 
-                    Console.WriteLine($"\nU${amount} foi sacado.");
+                    Console.WriteLine($"\nR${amount} foi sacado.");
                     Thread.Sleep(1000);
                     break;
                 }
