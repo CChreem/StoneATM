@@ -1,4 +1,4 @@
-﻿using StoneATM.DepositFlows.Classes;
+using StoneATM.DepositFlows.Classes;
 using StoneATM.Sceens;
 using StoneATM.Users.Classes;
 using System;
