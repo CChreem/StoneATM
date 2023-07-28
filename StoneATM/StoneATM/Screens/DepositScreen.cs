@@ -1,4 +1,5 @@
 ﻿using StoneATM.DepositFlows.Classes;
+using StoneATM.DepositFlows.Interfaces;
 using StoneATM.Sceens;
 using StoneATM.Users.Classes;
 using System;
@@ -8,11 +9,12 @@ namespace StoneATM.Screens
 {
     public class DepositScreen
     {
+        private readonly IDepositFlow _depositFlow = new DepositFlow();
+
         public void Deposit() 
         {
             var menuScreen = new MenuScreen();
             var client = new Client();
-            var deposit = new DepositFlow();
 
             Console.WriteLine("                                ");
             Console.WriteLine("          STONE - ATM           ");
@@ -21,12 +23,12 @@ namespace StoneATM.Screens
             var moeda = Console.ReadLine();
             if (moeda == "1") 
             {
-                deposit.DepositReal();
+                _depositFlow.DepositReal();
 
             }
             else if (moeda == "2")
             {
-                deposit.DepositDolar();
+                _depositFlow.DepositDolar();
             }
 
             Thread.Sleep(2000);
