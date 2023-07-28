@@ -6,15 +6,13 @@ namespace StoneATM.Sceens
 {
     public sealed class MenuScreen
     {
-        private static int option = 0;
-
         public void LoginAccountScreen(Client user)
         {
             var registerScreen = new RegisterScreen();
             var depositScreen = new DepositScreen();
             var withdrawScreen = new WithdrawScreen();
-
-
+            var balanceScreen = new BalanceScreen();
+            
             Console.Clear();
 
             registerScreen.WelcomeScreen(user);
@@ -45,7 +43,7 @@ namespace StoneATM.Sceens
                 switch (option)
                 {
                     case 1:
-                        depositScreen.Deposit();
+                        depositScreen.Deposit(user);
                         break;
                     case 2:
                         withdrawScreen.Withdraw();
@@ -54,7 +52,7 @@ namespace StoneATM.Sceens
                         //Cambio
                         break;
                     case 4:
-                        //saldo
+                        balanceScreen.CheckBalance(user);
                         break;
                     case 5:
                         //extrato

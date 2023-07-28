@@ -12,7 +12,6 @@ namespace StoneATM.Users.Classes
 
         public string SetName()
         {
-
             Console.Clear();
 
             Console.WriteLine("                                ");
@@ -21,7 +20,7 @@ namespace StoneATM.Users.Classes
             Console.WriteLine(" Nome:                          ");
             Console.WriteLine("=============================== ");
             Console.WriteLine("                                ");
-            string name = Console.ReadLine(); 
+            string name = Console.ReadLine();
             client.Name = name;
             return name;
         }
@@ -40,12 +39,10 @@ namespace StoneATM.Users.Classes
 
         public string SetPassword()
         {
-            var sucess = false;
             var forbidden = new List<string>() { "9999", "0000", "1111" };
             var password = "";
 
-
-            while (sucess == false)
+            while (password.Length != 4)
             {
                 Console.WriteLine("         STONE - ATM            ");
                 Console.WriteLine("                                ");
@@ -55,25 +52,26 @@ namespace StoneATM.Users.Classes
                 Console.WriteLine("                                ");
                 password = PasswordUtils.ReadPassword();
 
-                if (forbidden.Contains(password))
+                if (password.Length != 4)
+                {
+                    Console.WriteLine(" A senha precisa ter 4 dígitos. ");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                }
+                else if (forbidden.Contains(password))
                 {
                     Console.WriteLine("            STONE - ATM             ");
                     Console.WriteLine("                                    ");
                     Console.WriteLine("=================================== ");
                     Console.WriteLine(" Essa senha não pode ser utilizada  ");
                     Console.WriteLine("=================================== ");
-
                     Thread.Sleep(2000);
                     Console.Clear();
                 }
-                else
-                {
-                    sucess = true;
-                    client.Password = password;
-                }
             }
+
+            client.Password = password;
             return password;
         }
     }
 }
-    
