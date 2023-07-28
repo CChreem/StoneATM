@@ -46,7 +46,7 @@ namespace StoneATM.Sceens
                         depositScreen.Deposit(user);
                         break;
                     case 2:
-                        withdrawScreen.Withdraw();
+                        withdrawScreen.Withdraw(user);
                         break;
                     case 3:
                         //Cambio

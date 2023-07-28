@@ -1,10 +1,8 @@
-using StoneATM.RegisterFlow.Classes;
-using StoneATM.Sceens;
-using StoneATM.User.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using StoneATM.Sceens;
 using StoneATM.Utils;
 
 namespace StoneATM.Users.Classes
@@ -14,7 +12,6 @@ namespace StoneATM.Users.Classes
         private int option = 0;
         MenuScreen menuScreen = new MenuScreen();
         private static List<Client> users = new List<Client>();
-        private readonly IUserAccount _userAccount = new UserAccount();
 
         public void MainScreen()
         {
@@ -67,10 +64,6 @@ namespace StoneATM.Users.Classes
             client.Name = registerClient.SetName();
             client.CPF = registerClient.SetCPF();
             client.Password = registerClient.SetPassword();
-
-            UserAccount userAccount = new UserAccount();
-
-            client.Account = userAccount.CreateAccount();
 
             users.Add(client);
 
@@ -131,7 +124,7 @@ namespace StoneATM.Users.Classes
 
         public void WelcomeScreen(Client user)
         {
-            Console.WriteLine($"Seja Bem vindo, {user.Name} | Conta: {_userAccount.GetAccountNumber()}");
+            Console.WriteLine($"Seja Bem vindo, {user.Name}");
         }
     }
 }
